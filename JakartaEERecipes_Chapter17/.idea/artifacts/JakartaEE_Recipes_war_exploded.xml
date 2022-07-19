@@ -1,0 +1,40 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JakartaEE_Recipes:war exploded">
+    <output-path>$PROJECT_DIR$/target/JakartaEE_Recipes-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>JakartaEE_Recipes</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JakartaEE_Recipes" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.platform:jakarta.jakartaee-api:10.0.0-RC1" />
+          <element id="library" level="project" name="Maven: jakarta.nosql.mapping:mapping-document:1.0.0-b3" />
+          <element id="library" level="project" name="Maven: jakarta.nosql.mapping:mapping-core:1.0.0-b3" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/jakarta/nosql/communication/communication-document/1.0.0-b3/communication-document-1.0.0-b3.jar" output-file-name="jakarta.nosql.communication-communication-document-1.0.0-b3.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/jakarta/nosql/communication/communication-core/1.0.0-b3/communication-core-1.0.0-b3.jar" output-file-name="jakarta.nosql.communication-communication-core-1.0.0-b3.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/jakarta/nosql/communication/communication-query/1.0.0-b3/communication-query-1.0.0-b3.jar" output-file-name="jakarta.nosql.communication-communication-query-1.0.0-b3.jar" />
+          <element id="library" level="project" name="Maven: org.eclipse.jnosql.communication:mongodb-driver:1.0.0-b3" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/eclipse/jnosql/communication/communication-document/1.0.0-b3/communication-document-1.0.0-b3.jar" output-file-name="org.eclipse.jnosql.communication-communication-document-1.0.0-b3.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/eclipse/jnosql/communication/communication-core/1.0.0-b3/communication-core-1.0.0-b3.jar" output-file-name="org.eclipse.jnosql.communication-communication-core-1.0.0-b3.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/eclipse/jnosql/communication/communication-query/1.0.0-b3/communication-query-1.0.0-b3.jar" output-file-name="org.eclipse.jnosql.communication-communication-query-1.0.0-b3.jar" />
+          <element id="library" level="project" name="Maven: org.antlr:antlr4-runtime:4.9.1" />
+          <element id="library" level="project" name="Maven: org.eclipse.jnosql.communication:communication-driver-commons:1.0.0-b3" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-sync:4.2.1" />
+          <element id="library" level="project" name="Maven: org.mongodb:bson:4.2.1" />
+          <element id="library" level="project" name="Maven: org.mongodb:mongodb-driver-core:4.2.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/JakartaEE_Recipes-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="JakartaEE_Recipes/web/Web" />
+    </root>
+  </artifact>
+</component>

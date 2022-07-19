@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>cust</short-name>
+    <uri>custom</uri>
+    <tag>
+        <name>signature</name>
+        <tag-class>org.jakartaeerecipe.chapter02.recipe02_09.Signature</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>authorName</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
+

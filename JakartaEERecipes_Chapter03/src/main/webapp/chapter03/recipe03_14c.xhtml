@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+   <title>Recipe 3-15: Facelets Page Template</title>
+</h:head>
+<h:body>
+   <ui:composition template="./layout/custom_template.xhtml">
+      <ui:define name="top"/>
+      <ui:define name="left"/>
+      <ui:define name="content">
+         <h:form id="componentForm">
+            <h1>#{faceletsAuthorController.current.first} #{faceletsAuthorController.current.last}</h1>
+            <p>
+               #{faceletsAuthorController.current.bio}
+            </p>
+         </h:form>
+      </ui:define>
+      <ui:define name="bottom"/>
+   </ui:composition>
+</h:body>
+</html>
+

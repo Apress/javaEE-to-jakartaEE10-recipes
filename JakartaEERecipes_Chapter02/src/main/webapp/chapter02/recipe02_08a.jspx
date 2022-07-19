@@ -1,0 +1,32 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <head>
+        <style>div {
+            padding: 10px;
+        }</style>
+        <title>Recipe 2-8: Accessing Parameters in Multiple Pages </title>
+    </head>
+    <body>
+        <h1>Passing Parameters</h1>
+        <p>
+            The following parameters will be passed to the next Jakarta Server.
+        </p>
+        <form method="get" action="recipe02_08b.jspx">
+            <div>
+                <label for="param1">Param 1: </label>
+                <input id="param1" name="param1" type="text" value="1"/>
+            </div>
+            <div>
+                <label for="param2">Param 2: </label>
+                <input id="param2" name="param2" type="text" value="2 + 0"/>
+            </div>
+            <div>
+                <label for="param3">Param 3: </label>
+                <input id="param3" name="param3" type="text" value="three"/>
+            </div>
+            <div>
+                <input type="submit" value="Go to next page"/>
+            </div>
+        </form>
+    </body>
+</html>

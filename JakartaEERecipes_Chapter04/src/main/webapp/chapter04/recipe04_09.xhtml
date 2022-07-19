@@ -1,0 +1,62 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Acme Bookstore</title>
+</h:head>
+<h:body>
+    <ui:composition template="./layout/custom_template_search.xhtml">
+        <ui:define name="content">
+            <h:form id="componentForm">
+                <h1>Author List for #{ch4AuthorController.currentBook.title}</h1>
+                <p>
+                    Below is the list of authors. Click on the author's last name
+                    for more information regarding the author.
+                </p>
+                <h:graphicImage id="javarecipes" library="image"
+                                style="width: 100px; height: 120px"
+                                name="#{ch4AuthorController.currentBook.image}"/>
+                <br/>
+                <h:dataTable  id="authorTable" border="1"
+                              value="#{ch4AuthorController.authorList}"
+                              var="author">
+                    <f:facet name="header">
+                        #{ch4AuthorController.currentBook.title} Authors
+                    </f:facet>
+                    <h:column >
+                        <h:commandLink id="authorName" action="#{ch4AuthorController.displayAuthor(author.last)}"
+                                       value="#{author.first} #{author.last}"/>
+                    </h:column>
+                </h:dataTable>
+                <br/><br/>
+                <h:dataTable id="bookDetail" border="1"
+                             value="#{ch4AuthorController.currentBook.chapters}"
+                             var="book" style="width:100%"
+                             rowClasses="tocTableOdd, tocTableEven" columnClasses="col1">
+                    <f:facet name="header">
+                        #{ch4AuthorController.currentBook.title} Details
+                    </f:facet>
+                    <h:column >
+                        <f:facet name="header">
+                            Chapter
+                        </f:facet>
+                        <h:outputText value="#{book.chapterNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            Title
+                        </f:facet>
+                        <h:outputText value="#{book.title}"/>
+                    </h:column>
+                </h:dataTable>
+                <br/>
+                <br/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
+
+

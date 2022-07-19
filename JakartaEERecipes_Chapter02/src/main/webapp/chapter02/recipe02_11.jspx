@@ -1,0 +1,31 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      version="2.0">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<head>
+    <title>Recipe 2-11: Creating an Input Form for a Database Record </title>
+</head>
+    <body>
+        <h1>Recipe Input Form</h1>
+        <p>
+            Please insert recipe details using the text fields below.
+        </p>
+
+        <form method="POST" action="../RecipeServlet">
+
+            <label for="recipeNumber">Recipe Number:</label><br/>
+            <input id="recipeNumber" type="number" name="recipeNumber"/><br/>
+
+            <label for="name">Recipe Name: </label><br/>
+            <input type="text" name="name" size="30"/><br/>
+
+            <label for="description">Recipe Description: </label><br/>
+            <textarea name="description" rows="5" cols="50"> Enter description here...</textarea><br/>
+
+            <label for="text">Recipe Text: </label><br/>
+            <textarea id="text" name="text" rows="10" cols="50"> Enter text here...</textarea><br/><br/>
+
+            <input type="submit"/><input type="reset"/>
+        </form>
+    </body>
+</html>
+

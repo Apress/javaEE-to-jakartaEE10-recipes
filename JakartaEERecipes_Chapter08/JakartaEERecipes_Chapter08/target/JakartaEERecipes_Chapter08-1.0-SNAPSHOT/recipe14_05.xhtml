@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recipe 14-5</title>
+
+</h:head>
+<h:body>
+    <h:form>
+        <p>
+            JSON Builder and Reader Example
+        </p>
+
+        <h:messages infoStyle="color:green;" errorStyle="color:red;"/>
+        <br /><br />
+        The JSON below is created from reading the authors data from the database
+        or from a JSON file.
+
+        <br/><br/>
+        <h:outputText value="#{jsonController.readObject()}"/>
+
+
+    </h:form>
+
+</h:body>
+</html>

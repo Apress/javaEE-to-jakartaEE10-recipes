@@ -1,0 +1,21 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml"
+          version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:directive.page errorPage="recipe02_13_errorPage.jsp"/>
+    <html>
+
+    <head><title>Recipe 2-13: Handling Jakarta Server Errors </title></head>
+    <body>
+    <h1>There is an error on this page</h1>
+    <p>
+      This will produce an error:
+      <jsp:scriptlet>
+        if (request.getParameter("param").equals("value")) {
+          System.out.println("test");
+        }
+      </jsp:scriptlet>
+    </p>
+    </body>
+    </html>
+</jsp:root>

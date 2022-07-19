@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: jakarta.servlet:jakarta.servlet-api:5.0.0">
+    <archive path="/Users/home/.m2/repository/jakarta/servlet/jakarta.servlet-api/5.0.0/jakarta.servlet-api-5.0.0.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar" />
+  </library>
+  <library name="Maven: org.opentest4j:opentest4j:1.2.0">
+    <archive path="/Users/home/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-commons:1.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar" />
+  </library>
+  <library name="Maven: org.apiguardian:apiguardian-api:1.1.2">
+    <archive path="/Users/home/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-engine:1.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar" />
+  </library>
+  <library name="jstl">
+    <archive path="/Users/home/.m2/repository/jstl/jstl/1.2/jstl-1.2.jar" />
+  </library>
+  <library name="derbyclient">
+    <archive path="/Users/home/glassfish6/javadb/lib/derbyclient.jar" />
+  </library>
+  <library name="derby">
+    <archive path="/Users/home/glassfish6/javadb/lib/derby.jar" />
+  </library>
+</eclipse-userlibraries>
+

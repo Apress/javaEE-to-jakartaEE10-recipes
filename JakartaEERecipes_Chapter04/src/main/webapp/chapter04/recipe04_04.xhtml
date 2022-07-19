@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="layout/custom_template_search.xhtml">
+        <ui:define name="content">
+            <h:messages globalOnly="true"  errorStyle="color: red" infoStyle="color: green"/>
+            <h:form id="contactForm">
+                <h1>Subscribe to Newsletter</h1>
+                <p>
+                    <h:outputText  id="newsletterSubscriptionDesc"
+                                   value="#{contactController3.newsletterDescription}"/>
+                </p>
+                <h:outputLabel for="first" value="First: "/><br/>
+                <h:inputText id="first" size="40" value="#{contactController3.current.first}">
+                    <f:validateLength minimum="1" maximum="40"/>
+                </h:inputText>
+                <br/>
+                <h:message id="firstError" for="first" errorStyle="color:red"/><br/>
+                <h:outputLabel for="last" value="Last: "/><br/>
+                <h:inputText id="last" size="40" value="#{contactController3.current.last}">
+                    <f:validateLength minimum="1" maximum="40"/>
+                </h:inputText>
+                <br/>
+                <h:message id="lastError" for="last" errorStyle="color:red"/><br/>
+                <h:outputLabel for="email" value="Email: "/><br/>
+                <h:inputText id="email" size="40" value="#{contactController3.current.email}">
+                    <f:validateBean/>
+                </h:inputText><br/>
+                <h:message id="emailError" for="email" errorStyle="color:red"/>
+                <br/>
+                <h:outputLabel for="password" value="Enter a password for site access: "/><br/>
+                <h:inputSecret id="password" size="40" value="#{contactController3.current.password}"/>
+                <br/>
+                <h:outputLabel for="passwordConfirm" value="Confirm Password: "/><br/>
+                <h:inputSecret id="passwordConfirm" size="40" redisplay="true"
+                               validator="#{contactController3.validatePassword}"/><br/>
+                <h:message id="passwordConfirmError" for="passwordConfirm" style="color:red"/>
+                <br/>
+                <h:outputLabel  for="description" value="Enter your book interests"/><br/>
+                <h:inputTextarea id="description" rows="5" cols="100" value="#{contactController3.current.description}"/>
+                <br/>
+                <h:commandButton id="contactSubmit" action="#{contactController3.subscribe}" value="Save"/>
+                <br/><br/>
+                <h:outputFormat value="Cart contains the books {0}, {1}, {2}">
+                    <f:param value="Jakarta EE Fundamdenatals"/>
+                    <f:param value="Introducing Java 17 Fundamentals"/>
+                    <f:param value="Java EE to Jakarta EE 10 Recipes"/>
+                </h:outputFormat>
+                <br/><br/>
+                <h:commandLink id="manageAccount" action="#{contactController3.manage}" value="Manage Subscription"/>
+                <br/><br/>
+                <h:outputLink id="homeLink" value="home.xhtml">
+                    <h:outputText value="User Home Page"/>
+                    <f:param name="username" value="#{contactController3.current.email}"/>
+                </h:outputLink>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

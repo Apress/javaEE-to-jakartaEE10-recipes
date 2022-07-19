@@ -1,0 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <head>
+        <title>Recipe 2-7: Embedding Expressions in Jakarta Expression Language </title>
+    </head>
+    <body>
+        <h1>Arithmetic Expressions</h1>
+        <p>The following expressions demonstrate how to perform arithmetic using Jakarta Expression Language.</p>
+        10 - 4 = ${10 - 4}<br/>
+        85 / 15 = ${85 / 15}<br/>
+        847 divided by 6 = ${847 div 6}<br/>
+    </body>
+</html>

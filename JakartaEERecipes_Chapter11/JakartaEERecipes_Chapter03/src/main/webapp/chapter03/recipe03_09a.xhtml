@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Recipe 3-9: Passing Page Parameters to Methods</title>
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <h1>Author List</h1>
+        <p>
+            Below is the list of authors. Click on the author's last name
+            for more information regarding the author.
+        </p>
+        <h:graphicImage library="image" name="jakartaee10recipes.png" id="jakartaee10recipes" style="width: 10%; height: 20%"/>
+        <br/>
+        <h:dataTable id="authorTable" border="1" value="#{authorTableController.authorList}"
+                     var="author">
+            <f:facet name="header">
+                Java EE to Jakarta EE 10 Recipes Authors
+            </f:facet>
+            <h:column>
+                <h:commandLink id="authorName" action="#{authorTableController.displayAuthor(author.last)}" value="#{author.first} #{author.last}"/>
+            </h:column>
+        </h:dataTable>
+        <br/>
+        <br/>
+    </h:form>
+</h:body>
+</html>

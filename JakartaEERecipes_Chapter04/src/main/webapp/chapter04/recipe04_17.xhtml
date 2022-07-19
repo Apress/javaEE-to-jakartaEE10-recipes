@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Acme Bookstore</title>
+</h:head>
+<h:body>
+    <ui:composition template="./layout/custom_template_search.xhtml">
+        <ui:define name="content">
+            <h:form id="bookForm">
+                <h1>#{ch3AuthorController.currentBook.title}</h1>
+                <br/>
+                <h:messages id="shoppingCartMsgs" globalOnly="true"
+                            errorStyle="color: red" infoStyle="color: green"/>
+                <br/>
+
+                <br/>
+                <h:outputText id="isInCart" style="font-style: italic;">
+                    <f:event type="preRenderComponent" listener="#{ch3CartController.isBookInCart}"/>
+                </h:outputText>
+                <p>
+                    Below is the list of authors.  Click on the author's last name
+                    for more information regarding the author. #{ch3AuthorController.currentBook.image}
+                </p>
+
+                <h:graphicImage id="book" library="image"
+                                   style="width: 200px; height: 240px"
+                                   name="book.png"/>
+                <br/>
+                <h:dataTable id="authorTable" border="1" value="#{ch3AuthorController.authorList}"
+                             var="author">
+                    <f:facet name="header">
+                        Java EE to Jakarta EE 10 Recipes
+                    </f:facet>
+                </h:dataTable>
+                <br/>
+                <h:panelGrid columns="2" width="45%">
+                    <h:commandButton id="addToCart" action="#{ch3CartController.addToCart}" value="Add to Cart">
+                        <f:ajax render="shoppingCartMsgs"/>
+                    </h:commandButton>
+                    <h:commandButton id="viewCart" action="#{ch3CartController.viewCart}" value="View Cart">
+                    </h:commandButton>
+                </h:panelGrid>
+                <br/>
+                <br/>
+
+
+            </h:form>
+        </ui:define>
+
+
+    </ui:composition>
+
+</h:body>
+</html>

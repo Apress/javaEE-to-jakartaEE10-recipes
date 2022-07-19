@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>Recipe 12-4: Sending and Receiving Messages</title>
+</h:head>
+<h:body>
+   <p>
+      <h:form>
+         <h:commandButton id="receiveMessage" action="#{recipe12_04.receiveMessage()}" value="Turn on Receiver"/>
+         <h:commandButton id="sendMessage" action="#{recipe12_03.sendMessage()}" value="Send Message"/>
+         <br/>
+         <br/>
+
+      </h:form>
+      <h:outputText id="displayMessage" value="#{recipe12_04.displayMessage}"/>
+   </p>
+</h:body>
+</html>

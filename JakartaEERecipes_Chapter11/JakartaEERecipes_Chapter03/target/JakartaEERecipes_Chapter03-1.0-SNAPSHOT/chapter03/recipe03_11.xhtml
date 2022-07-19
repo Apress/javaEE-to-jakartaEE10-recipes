@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Recipe 3-11: Creating Bookmarkable URLs</title>
+</h:head>
+<h:body>
+    <f:metadata>
+        <f:viewParam name="authorLast" value="#{authorTableController.authorLast}"/>
+    </f:metadata>
+    <h:form id="componentForm">
+        <h1>#{authorTableController.current.first} #{authorTableController.current.last}</h1>
+        <p>
+            <h:graphicImage id="java9recipes" library="image" style="width: 10%; height: 20%" name="jakartaee10recipes.png"/>
+            <br/>
+            #{authorTableController.current.bio}
+        </p>
+        <h:link value="Go Back to List" outcome="recipe03_09a"/>
+    </h:form>
+</h:body>
+</html>

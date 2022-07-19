@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JakartaEERecipes_Chapter04:war exploded">
+    <output-path>$PROJECT_DIR$/target/JakartaEERecipes_Chapter04-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>JakartaEERecipes_Chapter04</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JakartaEERecipes_Chapter04" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: jakarta.platform:jakarta.jakartaee-web-api:10.0.0-RC1" />
+          <element id="library" level="project" name="Maven: jakarta.websocket:jakarta.websocket-client-api:2.1.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/JakartaEERecipes_Chapter04-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="JakartaEERecipes_Chapter04/web/Web" />
+    </root>
+  </artifact>
+</component>

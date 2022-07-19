@@ -1,0 +1,13 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:cust="custom">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<head>
+  <title>Recipe 2-9: Creating a Custom Jakarta Server Tag</title>
+</head>
+<body>
+<h1>Custom Jakarta Server Tag</h1>
+<p>The custom Jakarta Server tag is used as the footer for this page.</p>
+<br/>
+<cust:signature authorName="Josh Juneau and Tarun Telang"/>
+</body>
+</html>

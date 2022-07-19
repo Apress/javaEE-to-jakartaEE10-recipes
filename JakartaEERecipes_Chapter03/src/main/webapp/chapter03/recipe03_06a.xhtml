@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recipe 3-6</title>
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <h1>Jakarta Server Faces Navigation - Page 1</h1>
+        <p>
+            Clicking the submit button below will take you to Page #2.
+        </p>
+        <br/>
+        <h:commandButton id="navButton" action="#{navigationController.pageTwo}" value="Go To Page 2"/>
+        <br/>
+        <br/>
+        <h:commandButton id="navButton2" action="#{navigationController.nextPage}" value="Implicitly Navigate to Page 3"/>
+    </h:form>
+</h:body>
+</html>

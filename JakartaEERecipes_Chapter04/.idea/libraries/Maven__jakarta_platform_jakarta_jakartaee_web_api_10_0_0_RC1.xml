@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: jakarta.platform:jakarta.jakartaee-web-api:10.0.0-RC1">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/platform/jakarta.jakartaee-web-api/10.0.0-RC1/jakarta.jakartaee-web-api-10.0.0-RC1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/platform/jakarta.jakartaee-web-api/10.0.0-RC1/jakarta.jakartaee-web-api-10.0.0-RC1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/platform/jakarta.jakartaee-web-api/10.0.0-RC1/jakarta.jakartaee-web-api-10.0.0-RC1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

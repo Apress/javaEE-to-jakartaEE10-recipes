@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Recipe 3-8 Immediate View Evaluation</title>
+</h:head>
+<h:body>
+    <h:form id="employeeForm">
+        <h1>Java Developer Employee Information</h1>
+        <br/>
+        <h:messages globalOnly="true" errorStyle="color: red" infoStyle="color: green"/>
+        <br/>
+        <h:dataTable id="empTable" var="emp"
+             border="1" value="#{employeeController.employeeList}"
+             rendered="#{employeeController.employeeList.size() > 0}">
+            <f:facet name="header">
+                Current Employees
+            </f:facet>
+            <h:column id="empNameCol">
+                <f:facet name="header">Employee</f:facet>
+                <h:outputText id="empName" value="#{emp.employeeFirst} #{emp.employeeLast}"/>
+            </h:column>
+            <h:column id="titleCol">
+                <f:facet name="header">Title</f:facet>
+                <h:outputText id="title" value="#{emp.employeeTitle}"/>
+            </h:column>
+        </h:dataTable>
+        <p style="width: 40%;">
+            Please use the form below to insert employee information. The first and
+            last text fields will result in immediate evaluation during the apply request
+            values phase, whereas the text field
+            in the middle will result in standard evaluation and be validated during
+            the invoke application phase.
+            <br/><br/>
+            To test, try inserting just one character in the first text field
+            and then tab to the next field.  You should see an immediate result.
+        </p>
+        <h:panelGrid columns="3">
+            <h:outputLabel for="employeeFirst" value="First: " />
+            <h:inputText id="employeeFirst" immediate="true" onchange="submit()" value="#{employeeController.employeeFirst}">
+                <f:validateLength minimum="3" maximum="30"/>
+            </h:inputText>
+            <h:message for="employeeFirst" errorStyle="color:red"/>
+            <h:outputLabel for="employeeLast" value="Last: "  />
+            <h:inputText id="employeeLast" value="#{employeeController.employeeLast}">
+                <f:validateLength minimum="3" maximum="30"/>
+            </h:inputText>
+            <h:message for="employeeLast" errorStyle="color:red"/>
+            <h:outputLabel for="employeeTitle" value="Title (Must be a Java Position): "/>
+            <h:inputText id="employeeTitle" immediate="true" value="#{employeeController.employeeTitle}">
+                <f:validator validatorId="employeeTitleValidator" />
+            </h:inputText>
+            <h:message for="employeeTitle" errorStyle="color:red"/>
+        </h:panelGrid>
+        <h:commandButton id="employeeInsert" action="#{employeeController.insertEmployee}"
+                         value="Insert Employee"/>
+    </h:form>
+</h:body>
+</html>

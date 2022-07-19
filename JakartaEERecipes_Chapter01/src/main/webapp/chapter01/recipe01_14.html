@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+    <h1>Request Dispatch Example</h1>
+    <p>Perform a mathematical evaluation.  Insert two numbers to be evaluated and then
+        choose the type of evaluation to perform.</p>
+    <form method="POST" action="../MathDispatcher">
+        <label for="numa">Enter Number A: </label>
+        <input type="text" id="numa" name="numa"/><br><br>
+        <label for="numb">Enter Number B: </label>
+        <input type="text" id="numb" name="numb"/><br/><br/>
+        <select id="eval" name="eval">
+            <option value="add">Add the numbers</option>
+            <option value="subtract">Subtract the numbers</option>
+            <option value="multiply">Multiply the numbers</option>
+            <option value="divide">Divide the numbers</option>
+        </select>
+        <input type="submit" value="Submit Form"/>
+        <input type="reset" value="Reset Form"/>
+    </form>
+    </body>
+</html>

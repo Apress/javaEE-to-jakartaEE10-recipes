@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="../layout/custom_template.xhtml">
+    <ui:define name="title">
+        <h:outputText value="Jakarta EE 10 Recipes Controlled Access"></h:outputText>
+    </ui:define>
+    <ui:define name="body">
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
+        <h:outputText rendered="#{authenticationController.authenticated}">
+            <h:form>
+                This portion of the view contains secret content!
+            </h:form>
+        </h:outputText>
+        <h:outputText rendered="#{!authenticationController.authenticated}">
+            Please <a href="#{request.contextPath}/chapter15/login.xhtml">authenticate</a> to use this form.
+        </h:outputText>
+    </ui:define>
+</ui:composition>
+
+</html>

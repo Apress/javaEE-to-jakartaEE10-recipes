@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Recipe 11-10
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recipe 11-10: Processing CDI Events</title>
+
+</h:head>
+<h:body>
+    <p>
+        <h:form>
+            <p:messages id="messages" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="bookTitle" value="Book Title: "/>
+                <h:selectOneMenu id="bookTitle" value="#{bookstoreSaleController.currentEvent.book}"
+                >
+                    <f:ajax event="change"/>
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItems value="#{bookController.completeBookList}" var="book"
+                                   itemLabel="#{book.title}" itemValue="#{book.id}"/>
+                </h:selectOneMenu>
+                <h:outputLabel for="bookPrice" value="Price: " />
+                <h:inputText id="bookPrice" readonly="true" value="39.99"/>
+
+                <h:outputLabel for="numBooks" value="Number of Books: "/>
+                <h:selectOneMenu id="numBooks" value="#{bookstoreSaleController.currentEvent.numBooks}">
+                    <f:ajax event="change"/>
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItem itemLabel="1" itemValue="1"/>
+                    <f:selectItem itemLabel="2" itemValue="2"/>
+                </h:selectOneMenu>
+
+            </h:panelGrid>
+            <h:commandButton value="Place Online Order" type="submit" actionListener="#{bookstoreSaleController.onlineSaleAction}">
+                <f:ajax render="messages"/>
+            </h:commandButton>
+
+            <h:commandButton value="Place In-Store Order" type="submit" actionListener="#{bookstoreSaleController.storeSaleAction}">
+                <f:ajax render="messages"/>
+            </h:commandButton>
+        </h:form>
+    </p>
+</h:body>
+</html>

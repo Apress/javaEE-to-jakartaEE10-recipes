@@ -1,0 +1,46 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JakartaEERecipes_Chapter08:war exploded">
+    <output-path>$PROJECT_DIR$/target/JakartaEERecipes_Chapter08-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>JakartaEERecipes_Chapter08</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JakartaEERecipes_Chapter08" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.eclipse.persistence:eclipselink:4.0.0-M3" />
+          <element id="library" level="project" name="Maven: jakarta.persistence:jakarta.persistence-api:3.1.0" />
+          <element id="library" level="project" name="Maven: jakarta.xml.bind:jakarta.xml.bind-api:4.0.0" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-xjc:4.0.0-M3" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-core:4.0.0-M3" />
+          <element id="library" level="project" name="Maven: org.eclipse.angus:angus-activation:1.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.activation:jakarta.activation-api:2.1.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyclient:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbyshared:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.jboss.weld.se:weld-se-shaded:5.0.0.CR1" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbynet:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derby:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.derby:derbytools:10.15.2.0" />
+          <element id="library" level="project" name="Maven: org.primefaces:primefaces:jakarta:11.0.0" />
+          <element id="library" level="project" name="Maven: org.glassfish:jakarta.el:5.0.0-M1" />
+          <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:5.0.0" />
+          <element id="library" level="project" name="Maven: jakarta.platform:jakarta.jakartaee-api:10.0.0-RC1" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:7.0.4.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.0" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.4.1.Final" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.5.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/JakartaEERecipes_Chapter08-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="JakartaEERecipes_Chapter08/web/Web" />
+    </root>
+  </artifact>
+</component>

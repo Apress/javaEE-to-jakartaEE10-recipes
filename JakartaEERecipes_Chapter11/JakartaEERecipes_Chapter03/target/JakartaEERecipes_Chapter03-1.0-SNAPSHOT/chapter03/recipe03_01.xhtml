@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+    >
+<h:head>
+    <title>Recipe 3-1: A Simple Jakarta Server Faces Application</title>
+</h:head>
+<h:body>
+    <p>
+        This simple application utilizes a request-scoped Jakarta Server Faces controller class
+        to display the message below. If you change the message within the
+        controller class's constructor and then recompile the application,
+        a new message appears.
+        <br/>
+        <br/>
+        #{helloWorldController.hello}
+        <br/>
+        or
+        <br/>
+        <h:outputText id="helloMessage" value="#{helloWorldController.hello}"/>
+    </p>
+</h:body>
+</html>
+

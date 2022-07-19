@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        </head>
+    <body>
+
+    <ui:composition template="layout/custom_template_search.xhtml">
+            <ui:define name="content">
+                <h:messages globalOnly="true"  errorStyle="color: red" infoStyle="color: green"/>
+                <h:form id="contactForm">
+                    <h1>Subscribe to Newsletter</h1>
+                    <p>
+                        Enter your information below to be added to the Acme Bookstore newsletter.
+                    </p>
+                    <br/>
+                    <label for="first">First: </label><br/>
+                    <h:inputText id="first" size="40" value="#{contactController.current.first}"/>
+                    <br/><br/>
+                    <label for="last">Last: </label><br/>
+                    <h:inputText id="last" size="40" value="#{contactController.current.last}"/>
+                    <br/><br/>
+                    <label for="email">Email: </label><br/>
+                    <h:inputText id="email" size="40" value="#{contactController.current.email}"/>
+                    <br/><br/>
+                    <label for="password">Enter a password for site access:</label><br/>
+                    <h:inputSecret id="password" size="40" value="#{contactController.current.password}"/>
+                    <br/><br/>
+                    <label for="description">Enter your book interests</label><br/>
+                    <br/><br/>
+                    <h:inputTextarea id="description" rows="5" cols="60" value="#{contactController.current.description}"/>
+                    <br/><br/>
+                    <h:commandButton id="contactSubmit" action="#{contactController.subscribe}" value="Save"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

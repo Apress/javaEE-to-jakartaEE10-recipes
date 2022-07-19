@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:body>
+   <p>
+      The following button will turn on a receiver that filters messages based upon a selector where TYPE = 'JAKARTAEE',
+      any messages that have a different TYPE property will not be consumed.  Watch the output in the server log or at
+      the command line.
+      <h:form>
+         <h:commandButton id="receiveMessage" action="#{recipe12_05.receiveMessage()}" value="Turn on Receiver"/>
+
+         <h:commandButton id="sendMessage1" action="#{recipe12_05.sendMessage1()}" value="Send EE Message"/>
+
+         <h:commandButton id="sendMessage2" action="#{recipe12_05.sendMessage2()}" value="Send SE Message"/>
+
+         <br/>
+         <br/>
+         <h:outputText id="displayMessage" value="#{recipe12_05.displayMessage}"/>
+
+      </h:form>
+
+
+   </p>
+</h:body>
+</html>

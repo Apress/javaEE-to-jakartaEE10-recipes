@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.glassfish.soteria:jakarta.security.enterprise:3.0.0-M5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/soteria/jakarta.security.enterprise/3.0.0-M5/jakarta.security.enterprise-3.0.0-M5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/soteria/jakarta.security.enterprise/3.0.0-M5/jakarta.security.enterprise-3.0.0-M5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/soteria/jakarta.security.enterprise/3.0.0-M5/jakarta.security.enterprise-3.0.0-M5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

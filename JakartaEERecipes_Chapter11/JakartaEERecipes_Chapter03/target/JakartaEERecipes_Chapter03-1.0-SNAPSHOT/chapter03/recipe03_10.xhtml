@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<h:head>
+    <title>Recipe 3-10: Arithmetic and Reserved Words</title>
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <h1>Jakarta Server Faces Arithmetic and Reserved Words in EL</h1>
+        <p>
+            The following examples use Jakarta Server Faces EL to perform some arithmetic.
+        </p>
+        1 + 1 = #{1 + 1}
+        <br/>
+        <h:outputText value="20 / 5 = #{20 / 5}"/>
+        <br/>
+        <h:outputText rendered="#{1 + 1 eq 2}" value="1 + 1 DOES equal 2"/>
+        <br/>
+        <h:outputText rendered="#{5 * 4 != 20}" value="Is 5 * 4 equal to 20?"/>
+        <br/>
+        <h:outputText rendered="#{5 * 5 eq 25 and 1 + 1 eq 2}" value="Combining some expressions"/>
+        <br/>
+        <c:if test="#{evaluationController.expr1() eq true}">
+            This will be displayed if expr1() evaluates to true.
+        </c:if>
+        <br/>
+        <c:if test="#{evaluationController.expr2() eq true or evaluationController.field1 eq true}">
+            This will be displayed if expr2() or field1 evaluates to true.
+        </c:if>
+
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: jakarta.platform:jakarta.jakartaee-api:9.1.0">
+    <archive path="/Users/home/.m2/repository/jakarta/platform/jakarta.jakartaee-api/9.1.0/jakarta.jakartaee-api-9.1.0.jar" />
+  </library>
+  <library name="Maven: jakarta.jms:jakarta.jms-api:3.0.0">
+    <archive path="/Users/home/.m2/repository/jakarta/jms/jakarta.jms-api/3.0.0/jakarta.jms-api-3.0.0.jar" />
+  </library>
+  <library name="Maven: jakarta.faces:jakarta.faces-api:3.0.0">
+    <archive path="/Users/home/.m2/repository/jakarta/faces/jakarta.faces-api/3.0.0/jakarta.faces-api-3.0.0.jar" />
+  </library>
+</eclipse-userlibraries>
+

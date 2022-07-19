@@ -1,0 +1,5 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<footer>This is the page footer</footer>
+</html>
+

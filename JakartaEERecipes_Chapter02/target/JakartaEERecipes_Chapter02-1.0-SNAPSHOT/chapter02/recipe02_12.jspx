@@ -1,0 +1,23 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      version="2.0">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<jsp:useBean id="authorBean" scope="session" class="org.jakartaeerecipe.chapter02.recipe02_12.AuthorBean"/>
+<head>
+    <title>Recipe 2-12: Looping Through Database Records Within a Page </title>
+</head>
+<body>
+<h1>Authors</h1>
+<p>
+    The authors from the books are printed below.
+</p>
+<table border="1">
+    <c:forEach items="${authorBean.authorList }" var="author">
+        <tr>
+            <td> ${ author.first } ${ author.last }</td>
+        </tr>
+    </c:forEach>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="JakartaEERecipes_LOCAL" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>org.jakartaeerecipe.chapter07.entity.BookAuthor</class>
+        <class>org.jakartaeerecipe.chapter07.entity.Contact</class>
+        <class>org.jakartaeerecipe.chapter07.entity.AuthorWorkEmbeddded</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.user" value="APP"/>
+            <property name="jakarta.persistence.jdbc.password" value="abcd1234"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+        </properties>
+    </persistence-unit>
+</persistence>

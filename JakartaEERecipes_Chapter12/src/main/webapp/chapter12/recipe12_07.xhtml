@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:body>
+   <p>
+      Press the "Send Message" button a few times to send some messages to the topic, then click the
+      "Create Subscriber" button to create a subscriber and "ReciveMessages" button to recieve messages.
+      <h:form>
+         <h:commandButton id="createSub" action="#{recipe12_07.createTopicSubscriber()}" value="Create Subscriber"/>
+         <h:commandButton id="sendMessage" action="#{recipe12_07.sendMessage()}" value="Send Message"/>
+         <h:commandButton id="receiveMessage" action="#{recipe12_07.receiveMessage()}" value="Receive Messages"/>
+         <br/>
+         <br/>
+      </h:form>
+   </p>
+</h:body>
+</html>

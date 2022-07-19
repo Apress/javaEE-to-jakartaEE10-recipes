@@ -1,0 +1,53 @@
+<html>
+<head>
+    <script type="text/javascript">
+        var ws;
+        function bookChatRelay()
+        {
+            if ("WebSocket" in window)
+            {
+                alert("WebSocket is supported by your Browser!");
+                if (ws == null){
+                    alert("Creating new websocket connection");
+                    ws = new WebSocket("ws://localhost:8080/JakartaEERecipes_Chapter14-1.0-SNAPSHOT/chat");
+                } else {
+                    ws.send("Another message");
+                }
+                ws.onopen = function()
+                {
+                    // Web Socket is connected, send data using send()
+                    ws.send("Message to send");
+                    alert("Message is sent...");
+                };
+                ws.onmessage = function (evt)
+                {
+                    var received_msg = evt.data;
+                    alert("Message from server: " + received_msg);
+                };
+                ws.onclose = function()
+                {
+                    // websocket is closed.
+                    alert("Connection is closed...");
+                };
+            }
+            else
+            {
+                // The browser doesn't support WebSocket
+                alert("WebSocket NOT supported by your Browser!");
+            }
+        }
+        function closeConnection(){
+            if (ws !== null){
+                ws.close();
+                ws = null;
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="wsRelay" type="button" value="WebSocket Test Message"
+       onclick="bookChatRelay();"/>
+<input id="closeConn" type="button" value="Close Connection"
+       onclick="closeConnection();"/>
+</body>
+</html>

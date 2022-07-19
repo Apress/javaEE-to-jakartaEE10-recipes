@@ -1,0 +1,7 @@
+org/jakartaeerecipe/chapter07/entity/BookAuthor.class
+org/jakartaeerecipe/chapter07/recipe07_03/PUTester.class
+org/jakartaeerecipe/chapter07/entity/Contact.class
+org/jakartaeerecipe/chapter07/entity/AuthorWork.class
+org/jakartaeerecipe/chapter07/entity/key/AuthorWorkPKEmbedded.class
+org/jakartaeerecipe/chapter07/entity/AuthorWorkLegacy.class
+org/jakartaeerecipe/chapter07/entity/key/AuthorWorkPKNonEmbedded.class

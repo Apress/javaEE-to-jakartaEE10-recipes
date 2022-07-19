@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: jakarta.platform:jakarta.jakartaee-web-api:9.1.0">
+    <archive path="/Users/home/.m2/repository/jakarta/platform/jakarta.jakartaee-web-api/9.1.0/jakarta.jakartaee-web-api-9.1.0.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.1/junit-jupiter-api-5.8.1.jar" />
+  </library>
+  <library name="Maven: org.opentest4j:opentest4j:1.2.0">
+    <archive path="/Users/home/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-commons:1.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/platform/junit-platform-commons/1.8.1/junit-platform-commons-1.8.1.jar" />
+  </library>
+  <library name="Maven: org.apiguardian:apiguardian-api:1.1.2">
+    <archive path="/Users/home/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.1/junit-jupiter-engine-5.8.1.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-engine:1.8.1">
+    <archive path="/Users/home/.m2/repository/org/junit/platform/junit-platform-engine/1.8.1/junit-platform-engine-1.8.1.jar" />
+  </library>
+  <library name="Maven: jakarta.faces:jakarta.faces-api:3.0.0">
+    <archive path="/Users/home/.m2/repository/jakarta/faces/jakarta.faces-api/3.0.0/jakarta.faces-api-3.0.0.jar" />
+  </library>
+  <library name="PrimeFaces-6.1" />
+</eclipse-userlibraries>
+

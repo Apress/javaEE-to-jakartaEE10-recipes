@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JakartaEE_Recipes:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>JakartaEE_Recipes</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="JakartaEE_Recipes-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="JakartaEE_Recipes:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Recipe 3-12: Displaying Lists of Objects</title>
+    <link href="#{facesContext.externalContext.requestContextPath}/css/styles.css"
+          rel="stylesheet" type="text/css" />
+
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <p>
+            <h:graphicImage id="java9recipes" style="width: 10%; height: 20%" library="image" name="jakartaee10recipes.png"/>
+            <br/>
+            #{authorTableController.current.bio}
+        </p>
+        <h:dataTable id="authorTable" border="1"
+                     value="#{authorTableController.authorList}"
+                     styleClass="authorTable"
+                     rowClasses="authorTableOdd, authorTableEven"
+                     var="author">
+            <f:facet name="header">
+                Java EE to Jakarta EE 10 Recipes Authors
+            </f:facet>
+            <h:column>
+                <h:outputText id="authorName" value="#{author.first} #{author.last}"/>
+            </h:column>
+        </h:dataTable>
+        <br/><br/>
+        <h:dataTable id="authorTable2" border="1" value="#{authorTableController.authorList}"
+                     var="author" width="500px;">
+            <f:facet name="header">
+                Java EE to Jakarta EE 10 Recipes Authors
+            </f:facet>
+            <h:column>
+                <h:panelGrid columns="2" border="1" width="100%">
+                    <h:outputText id="authorFirst" value="#{author.first}" style="width: 50%"/>
+                    <h:outputText id="authorLast" value="#{author.last}" style="width:50%"/>
+                </h:panelGrid>
+                <h:outputText id="authorBio" value="#{author.bio}"/>
+            </h:column>
+        </h:dataTable>
+    </h:form>
+</h:body>
+</html>

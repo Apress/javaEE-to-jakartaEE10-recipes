@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:composition template="layout/custom_template_search.xhtml">
+        <ui:define name="content">
+            <h:messages globalOnly="true"  errorStyle="color: red" infoStyle="color: green"/>
+            <h:form id="contactForm">
+                <h1>Subscribe to Newsletter</h1>
+                <p>
+                    <h:outputText  id="newsletterSubscriptionDesc"
+                                   value="#{contactController6.newsletterDescription}"/>
+                </p>
+                <h:outputLabel for="first" value="First: "/><br/>
+                <h:inputText id="first" size="40" value="#{contactController6.current.first}">
+                    <f:validateLength minimum="1" maximum="40"/>
+                </h:inputText>
+                <br/>
+                <h:message id="firstError" for="first" errorStyle="color:red"/><br/>
+                <h:outputLabel for="last" value="Last: "/><br/>
+                <h:inputText id="last" size="40" value="#{contactController6.current.last}">
+                    <f:validateLength minimum="1" maximum="40"/>
+                </h:inputText>
+                <br/><br/>
+                <h:outputLabel for="gender" value="Gender: "/><br/>
+                <h:selectOneRadio id="gender" value="#{contactController6.current.gender}">
+                    <f:selectItem itemValue="M" itemLabel="Male"/>
+                    <f:selectItem itemValue="F" itemLabel="Female"/>
+                </h:selectOneRadio>
+                <h:message id="genderError"
+                           for="gender"
+                           errorStyle="color:red"/>
+                <br/>
+                <h:message id="lastError" for="last" errorStyle="color:red"/>
+                <h:outputLabel for="email" value="Email: "/><br/>
+                <h:inputText id="email" size="40" value="#{contactController6.current.email}">
+                    <f:validateBean/>
+                </h:inputText>
+                <h:message id="emailError" for="email" errorStyle="color:red"/>
+                <br/><br/>
+                <h:outputLabel for="password" value="Enter a password for site access: "/>
+                <h:inputSecret id="password" size="40" value="#{contactController6.current.password}"/>
+                <br/>
+                <h:outputLabel for="passwordConfirm" value="Confirm Password: "/>
+                <h:inputSecret id="passwordConfirm" size="40" redisplay="true"
+                               validator="#{contactController6.validatePassword}"/><br/>
+                <h:message id="passwordConfirmError" for="passwordConfirm" style="color:red"/>
+                <br/><br/>
+                <h:outputLabel  for="description" value="Enter your book interests"/>
+                <br/>
+                <h:inputTextarea id="description" rows="5" cols="100" value="#{contactController6.current.description}"/>
+                <br/><br/>
+                <h:outputLabel for="occupation" value="Occupation: "/><br/>
+                <h:selectOneMenu id="occupation" value="#{contactController6.current.occupation}">
+                    <f:selectItem itemLabel="" itemValue=""/>
+                    <f:selectItems value="#{contactController6.occupationList}"/>
+                </h:selectOneMenu>
+                <br/><br/>
+                <h:outputLabel for="newsletterList" value="Newsletters:"/>
+                <h:selectManyListbox id="newsletterList" value="#{contactController6.current.newsletterList}">
+                    <f:selectItems value="#{contactController6.allNewsletters}"/>
+                </h:selectManyListbox>
+                <br/><br/>
+                <h:outputLabel for="notifyme" value="Would you like to receive other promotional email?"/>
+                <h:selectBooleanCheckbox id="notifyme"
+                                         value="#{contactController6.current.receiveNotifications}"/>
+                <br/><br/>
+                <h:outputLabel for="notificationTypes"
+                               value="What type of notifications are you interested in receiving?"/>
+                <h:selectManyCheckbox id="notificationTypes" value="#{contactController6.current.notificationType}">
+                    <f:selectItems value="#{contactController6.notificationTypes}"/>
+                </h:selectManyCheckbox>
+                <h:commandButton id="contactSubmit" action="#{contactController6.subscribe}" value="Save"/>
+                <br/><br/>
+                <h:commandLink id="manageAccount" action="#{contactController6.manage}" value="Manage Subscription"/>
+                <br/><br/>
+                <h:outputLink id="homeLink" value="home.xhtml">
+                    <h:outputText value="User Home Page"/>
+                    <f:param name="username" value="#{contactController6.current.email}"/>
+                </h:outputLink>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

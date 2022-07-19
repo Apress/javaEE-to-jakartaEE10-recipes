@@ -1,0 +1,28 @@
+.authorTable{
+    border-collapse:collapse;
+}
+.authorTableOdd{
+    text-align:center;
+    background:none repeat scroll 0 0 #CCFFFF;
+    border-top:1px solid #BBBBBB;
+}
+
+.authorTableEven{
+    text-align:center;
+    background:none repeat scroll 0 0 #99CCFF;
+    border-top:1px solid #BBBBBB;
+}
+
+
+.tocTableOdd{
+    background: #c0c0c0;
+}
+
+.tocTableEven{
+    background: #e0e0e0;
+}
+
+.col1{
+    text-indent: 15px;
+    font-weight: bold;
+}

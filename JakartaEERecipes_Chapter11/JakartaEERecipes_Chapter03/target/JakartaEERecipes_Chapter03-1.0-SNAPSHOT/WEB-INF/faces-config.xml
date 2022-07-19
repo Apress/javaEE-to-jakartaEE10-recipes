@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                                  https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+    <navigation-rule>
+        <from-view-id>/chapter03/recipe03_06a.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>PAGE_2</from-outcome>
+            <to-view-id>/chapter03/recipe03_06b.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/chapter03/recipe03_06b.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>PAGE_1</from-outcome>
+            <to-view-id>/chapter03/recipe03_06a.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/chapter03/recipe03_06c.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{navigationController.login}</from-action>
+            <if>#{navigationController.authenticated}</if>
+            <to-view-id>/chapter03/recipe03_06d.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

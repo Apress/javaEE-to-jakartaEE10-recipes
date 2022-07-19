@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Acme Bookstore</title>
+</h:head>
+<h:body>
+    <ui:composition template="./layout/custom_template.xhtml">
+        <ui:define name="content">
+            <h:form id="shoppingCartForm">
+                <h1>Shopping Cart Contents</h1>
+                <p>
+                    Below are the contents of your cart.
+                </p>
+                <h:messages id="cartMessage" globalOnly="true"
+                            errorStyle="color: red" infoStyle="color: green"/>
+                <br/>
+                <p:dialog id="updateDialog" widgetVar="updateDlg"
+                          modal="true"
+                          height="40" resizable="false"
+                          closable="false" showHeader="false" >
+
+                    <h:graphicImage id="loading" library="image" name="ajaxloading.gif"/>
+                </p:dialog>
+                <p:dataTable id="cartTable" value="#{cartController.cart.books}" var="book"
+                             rendered="#{cartController.cart.books ne null}">
+                    <p:ajax id="rowEditAjax" event="rowEdit" update="@this"
+                            listener="#{cCartController.updateRowData}"
+                            onstart="updateDlg.show();"
+                            oncomplete="updateDlg.hide();"
+                            onerror="updateDlg.hide();"/>
+
+                    <p:column id="title" headerText="Title">
+                        #{book.book.title}
+                    </p:column>
+                    <p:column id="quantity" headerText="Quantity">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:inputText readonly="true" size="10" value="#{book.quantity}"/>
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText id="bookQty" size="10" value="#{book.quantity}"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column id="edit" headerText="Edit">
+                        <p:rowEditor />
+                    </p:column>
+
+
+                </p:dataTable>
+
+                <h:outputText id="emptyCart" value="No items currently in cart."
+                              rendered="#{cartController.cart.books eq null}"/>
+                <br/>
+                <h:commandLink id="continueLink" action="#{cartController.continueShopping}" value="Continue Shopping"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

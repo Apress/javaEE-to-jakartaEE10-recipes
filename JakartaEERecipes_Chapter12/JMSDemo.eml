@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_8" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: jakarta.jms:jakarta.jms-api:3.0.0" scope="PROVIDED"/>
+	<lib name="Maven: jakarta.faces:jakarta.faces-api:3.0.0" scope="PROVIDED"/>
+	<levels>
+		<level name="Maven: jakarta.jms:jakarta.jms-api:3.0.0" value="project"/>
+		<level name="Maven: jakarta.faces:jakarta.faces-api:3.0.0" value="project"/>
+		<level name="Maven: jakarta.platform:jakarta.jakartaee-api:9.1.0" value="project"/>
+	</levels>
+</component>

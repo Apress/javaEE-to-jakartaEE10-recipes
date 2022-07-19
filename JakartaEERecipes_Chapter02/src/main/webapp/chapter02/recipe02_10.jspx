@@ -1,0 +1,14 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<head>
+    <title>Recipe 2-10: Including Other Jakarta Server Pages into a Page</title>
+</head>
+<body>
+<jsp:include page="recipe02_10-header.jspx" />
+<h1>This is the body of the main Jakarta Server Page.</h1>
+<p>
+    Both the header and footer for this page were created as separate Jakarta Server Pages.
+</p>
+<jsp:include page="recipe02_10-footer.jspx"/>
+</body>
+</html>

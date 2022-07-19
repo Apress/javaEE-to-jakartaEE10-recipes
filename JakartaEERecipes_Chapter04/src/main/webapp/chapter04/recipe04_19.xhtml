@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+   <head>
+   </head>
+   <body>
+      <ui:composition template="layout/custom_template_search.xhtml">
+         <ui:define name="content">
+            <h:messages globalOnly="true"  errorStyle="color: red" infoStyle="color: green"/>
+            <h:form id="webSocketForm">
+               <script type="text/javascript">
+                  function messageListener(message) {
+                     document.getElementById("messageDiv").innerHTML += message + "&lt;br/>";
+                  }
+               </script>
+               <p>
+                  Websocket Integration Example
+               </p>
+                  <p>
+                     Enter text into the box below and press send button.  This will send
+                     a message to all connected clients.
+                  </p>
+                  <h:inputText id="websocketMessageText" value="#{bookstoreController.messageText}">
+                     <f:ajax/>
+                  </h:inputText>
+                  <br/>
+                  <h:commandButton id="sendMessage" action="#{bookstoreController.sendMessage}" value="Send">
+                     <f:ajax/>
+                  </h:commandButton>
+                  <br/>
+                  <f:websocket channel="messagePusher" onmessage="messageListener"/>
+                  <div id="messageDiv"/>
+            </h:form>
+         </ui:define>
+      </ui:composition>
+   </body>
+</html>

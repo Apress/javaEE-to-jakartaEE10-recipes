@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="Richfaces-4.2.2" type="jsf-richfaces">
+    <properties version="4.2.2" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-components-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-core-api.jar!/" />
+      <root url="file://$PROJECT_DIR$/lib/lgpl.txt" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-core-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-components-ui.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-core-api-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-core-impl-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-components-ui-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/richfaces-components-api-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+.authorTable{
+    border-collapse:collapse;
+}
+.authorTableOdd{
+    text-align:center;
+    background:none repeat scroll 0 0 #CCFFFF;
+    border-top:1px solid #BBBBBB;
+}
+.authorTableEven{
+    text-align:center;
+    background:none repeat scroll 0 0 #99CCFF;
+    border-top:1px solid #BBBBBB;
+}

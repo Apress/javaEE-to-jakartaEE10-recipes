@@ -1,0 +1,31 @@
+<html xmlns:jsp="http://java.sun.com/JSP/Page"
+      version="2.0">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<head>
+    <title>Recipe 2-8: Accessing Parameters in Multiple Pages </title>
+</head>
+<body>
+<h1>Passing Parameters</h1>
+<p>
+    The following parameters were passed from the original Jakarta Server Pages.
+</p>
+<form method="post" action="recipe02_08a.jspx">
+    Param 1: <jsp:expression>request.getParameter("param1") </jsp:expression>
+    <br/>
+    Param 2: <jsp:expression> request.getParameter("param2") </jsp:expression>
+    <br/>
+    Param 3: <jsp:expression> request.getParameter("param3") </jsp:expression>
+    <br/>
+    OR using value expressions
+    <br/>
+    Param 1: ${ param.param1 }
+    <br/>
+    Param 2: ${ param.param2 }
+    <br/>
+    Param 3: ${ param.param3 }
+    <br/>
+    <input type="submit" value="Back to Page 1"/>
+</form>
+</body>
+</html>
+

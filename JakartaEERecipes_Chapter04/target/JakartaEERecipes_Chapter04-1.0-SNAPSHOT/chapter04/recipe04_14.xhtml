@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <body>
+        <ui:composition template="layout/custom_template_search.xhtml">
+            <ui:define name="content">
+                <h:form id="contactForm">
+                    <h1>Subscribe to Newsletter</h1>
+                    <p>
+                        <h:outputText id="newsletterSubscriptionDesc"
+                                      value="#{ch3ContactController.newsletterDescription}"/>
+                    </p>
+                    <br/>
+                    <h:messages id="newsletterSubscriptionMsgs" globalOnly="true"  errorStyle="color: red" infoStyle="color: green"/>
+                    <br/>
+                    <f:ajax event="blur" render="firstError lastError emailError genderError passwordError passwordConfirmError">
+                        <h:panelGrid columns="2" bgcolor="" border="0">
+                            <h:panelGroup>
+                                <h:outputLabel for="first" value="First: "/>
+                                <h:inputText id="first" size="40" value="#{ch3ContactController.current.first}">
+                                    <f:validateLength minimum="1" maximum="40"/>
+                                </h:inputText>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                <h:outputLabel for="last" value="Last: "/>
+                                <h:inputText id="last" size="40" value="#{ch3ContactController.current.last}">
+                                    <f:validateLength minimum="1" maximum="40"/>
+                                </h:inputText>
+                            </h:panelGroup>
+                            <h:message id="firstError"
+                                       for="first"
+                                       errorStyle="color:red"/>
+                            <h:message id="lastError"
+                                       for="last"
+                                       errorStyle="color:red"/>
+                            <h:panelGroup>
+                                <h:outputLabel for="email" value="Email: "/>
+                                <h:inputText id="email" size="40" value="#{ch3ContactController.current.email}">
+                                </h:inputText>
+                            </h:panelGroup>
+                            <h:panelGroup/>
+                            <h:message id="emailError"
+                                       for="email"
+                                       errorStyle="color:red"/>
+                            <h:panelGroup/>
+                            <h:selectOneRadio title="Gender" id="gender" value="#{ch3ContactController.current.gender}">
+                                <f:selectItem  itemValue="M" itemLabel="Male"/>
+                                <f:selectItem itemValue="F" itemLabel="Female"/>
+                            </h:selectOneRadio>
+                            <h:panelGroup>
+                                <h:outputLabel for="occupation" value="Occupation: "/>
+                                <h:selectOneMenu id="occupation" value="#{ch3ContactController.current.occupation}">
+                                    <f:selectItems value="#{ch3ContactController.occupationList}"/>
+                                </h:selectOneMenu>
+                            </h:panelGroup>
+                            <h:message id="genderError"
+                                       for="gender"
+                                       errorStyle="color:red"/>
+                        </h:panelGrid>
+                        <br/>
+                        <h:outputLabel for="description" value="Enter your book interests"/>
+                        <br/>
+                        <h:inputTextarea id="description" rows="5" cols="75" value="#{ch3ContactController.current.description}"/>
+                        <br/>
+                        <h:panelGrid columns="2">
+                            <h:outputLabel for="password" value="Enter a password for site access: "/>
+                            <h:inputSecret id="password" size="40" value="#{ch3ContactController.current.password}">
+                                <f:validateRequired/>
+                                <f:ajax event="keyup" listener="#{ch3ContactController.passwordStrength}" render="passwordStrengthMessage"/>
+                            </h:inputSecret>
+                            <h:outputLabel for="passwordConfirm" value="Confirm Password: "/>
+                            <h:inputSecret id="passwordConfirm" size="40" value="#{ch3ContactController.passwordConfirm}"
+                                           validator="#{ch3ContactController.validatePassword}">
+                            </h:inputSecret>
+                        </h:panelGrid>
+                        <h:panelGroup>
+                            <h:outputText id="passwordStrengthMessage" value="#{ch3ContactController.passwordStrengthMessage}"/>
+                            <h:message id="passwordError"
+                                       for="password"
+                                       style="color:red"/>
+                        </h:panelGroup>
+                        <br/>
+                        <h:message id="passwordConfirmError"
+                                   for="passwordConfirm"
+                                   style="color:red"/>
+                        <br/>
+                        <hr/>
+                        <br/>
+                        <h:panelGrid columns="3">
+                            <h:panelGroup>
+                                <h:outputLabel for="newsletterList" value="Newsletters:" style=" "/>
+                                <h:selectManyListbox id="newsletterList" value="#{ch3contactController.current.newsletterList}">
+                                    <f:selectItems value="#{ch3contactController.allNewsletters}"/>
+                                </h:selectManyListbox>
+                            </h:panelGroup>
+                            <h:panelGroup>
+                                <h:panelGrid columns="1">
+                                    <h:panelGroup>
+                                        <h:outputLabel for="notifyme" value="Would you like to receive other promotional email?"/>
+                                        <h:selectBooleanCheckbox id="notifyme" value="#{ch3ContactController.current.receiveNotifications}"/>
+                                    </h:panelGroup>
+                                    <h:panelGroup/>
+                                    <hr/>
+                                    <h:panelGroup/>
+                                    <h:panelGroup>
+                                        <h:outputLabel for="notificationTypes" value="What type of notifications are you interested in receiving?"/>
+                                        <br/>
+                                        <h:selectManyCheckbox id="notificationTypes" value="#{ch3ContactController.current.notificationType}">
+                                            <f:selectItems value="#{ch3ContactController.notificationTypes}"/>
+                                        </h:selectManyCheckbox>
+                                    </h:panelGroup>
+                                </h:panelGrid>
+                            </h:panelGroup>
+                        </h:panelGrid>
+                        <hr/>
+                        <br/>
+                    </f:ajax>
+                    <h:commandButton id="contactSubmit" action="#{ch3ContactController.subscribe}" value="Save">
+                        <f:ajax event="action" execute="@form" render="@all"/>
+                    </h:commandButton>
+                    <h:panelGrid  columns="2" width="400px;">
+                        <h:commandLink id="manageAccount" action="#{ch3ContactController.manage}" value="Manage Subscription">
+                            <f:ajax event="action" execute="@this" render="@all"/>
+                        </h:commandLink>
+                        <h:outputLink id="homeLink" value="home.xhtml">Home</h:outputLink>
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

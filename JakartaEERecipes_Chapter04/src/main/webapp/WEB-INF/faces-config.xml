@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="3.0" xmlns="https://jakarta.ee/xml/ns/jakartaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                                  https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+    <application>
+        <system-event-listener>
+            <system-event-listener-class>org.jakartaee10recipe.chapter04.recipe04_16.BookstoreAppListener</system-event-listener-class>
+            <system-event-class>jakarta.faces.event.PostConstructApplicationEvent</system-event-class>
+        </system-event-listener>
+        <system-event-listener>
+            <system-event-listener-class>org.jakartaee10recipe.chapter04.recipe04_16.BookstoreAppListener</system-event-listener-class>
+            <system-event-class>jakarta.faces.event.PreDestroyApplicationEvent</system-event-class>
+        </system-event-listener>
+    </application>
+
+</faces-config>

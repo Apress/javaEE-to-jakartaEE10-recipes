@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+>
+    <h:head>
+        <title>Acme Bookstore</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./layout/custom_template_search.xhtml">
+            <ui:define name="content">
+                <h:form prependId="false" enctype="multipart/form-data">
+                    Choose a file to upload to the server:    <br/>
+                    <h:inputFile id="uploadFile" value="#{ajaxBean.file}"/>
+                    <br/>
+                    <h:commandButton action="#{ajaxBean.uploadFile()}" value="Upload File"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

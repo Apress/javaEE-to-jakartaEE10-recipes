@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Recipe 3-3: Building Sophisticated Jakarta Server Faces Views with Components</title>
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <h1>Jakarta Server Faces Components, Creating a Sophisticated Page</h1>
+        <p>
+            The view for this page is made up entirely of Jakarta Server Faces standard components.
+            <br/>As you can see, there are many useful components bundled with Jakarta Server Faces out of the box.
+            <br/>
+        </p>
+        <p>Book Recommendation: Java EE to Jakarta EE 10 Recipes
+            <br/>
+            <h:graphicImage id="jakartaee10recipes" library="image" name="jakartaee10recipes.png" width="350px"/>
+            <br/>
+            <h:dataTable id="authorTable" value="#{authorController.authorList}"
+                         var="author">
+                <f:facet name="header">
+                    Java EE to Jakarta EE 10 Recipes Authors
+                </f:facet>
+                <h:column>
+                    <h:outputText id="authorName" value="#{author.first} #{author.last}"/>
+                </h:column>
+            </h:dataTable>
+            <br/>
+            <br/>
+            Use the following form to add an author to the list.
+            <br/>
+            <h:outputLabel for="newAuthorFirst" value="New Author First Name: "/>
+            <h:inputText id="newAuthorFirst" value="#{authorController.newAuthorLast}"/>
+            <br/>
+            <h:outputLabel for="newAuthorLast" value="New Author Last Name: "/>
+            <h:inputText id="newAuthorLast" value="#{authorController.newAuthorLast}"/>
+            <br/>
+            <h:inputTextarea id="bio" cols="20" rows="5"
+                             value="#{authorController.bio}"/>
+            <br/>
+            <br/>
+            <h:commandButton id="addAuthor" action="#{authorController.addAuthor}"
+                             value="Add Author"/>
+            <br/>
+            <br/>
+        </p>
+    </h:form>
+</h:body>
+</html>
+

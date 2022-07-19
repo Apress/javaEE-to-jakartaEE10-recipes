@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="JakartaEERecipesPU">
+        <class>org.jakartaeerecipe.entity.Book</class>
+        <class>org.jakartaeerecipe.entity.BookAuthor</class>
+        <class>org.jakartaeerecipe.entity.AuthorWork</class>
+        <class>org.jakartaeerecipe.entity.Chapter</class>
+        <class>org.jakartaeerecipe.entity.BookCategory</class>
+        <class>org.jakartaeerecipe.entity.BookStore</class>
+        <class>org.jakartaeerecipe.entity.ItCategory</class>
+        <class>org.jakartaeerecipe.entity.BookCategory</class>
+        <class>org.jakartaeerecipe.entity.BookStore</class>
+        <properties>
+            <property name="toplink.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="toplink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+        </properties>
+    </persistence-unit>
+</persistence>

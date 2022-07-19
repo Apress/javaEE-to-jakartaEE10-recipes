@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Recipe 3-5: Specifying Updatable Messages</title>
+</h:head>
+<h:body>
+    <h:form id="componentForm">
+        <h1>Utilizing a resource bundle</h1>
+        <p>
+            The message below is displayed from a resource bundle.  The h:outputText
+            component has been added to the page only to instantiate the bean for this
+            example.  To change
+            the message, simply modify the corresponding message within the bundle
+            and then refresh the page.
+        </p>
+        <h:outputText id="exampleProperty" value="#{exampleController.exampleProperty}"/>
+        <br/>
+        <h:messages errorStyle="color: red" infoStyle="color: green" globalOnly="true"/>
+    </h:form>
+</h:body>
+</html>
+

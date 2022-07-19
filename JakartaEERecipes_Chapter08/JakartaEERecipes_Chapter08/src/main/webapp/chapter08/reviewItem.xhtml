@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!--
+Book:  Jakarta EE Recipes
+Author: J. Juneau
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Acme Bookstore</title>
+</h:head>
+<h:body>
+    <ui:composition template="./layout/custom_template.xhtml">
+
+
+        <ui:define name="content">
+            <h:form id="bookForm">
+                <h1>Review Item</h1>
+                <br/>
+                <h:messages id="reviewMsg" globalOnly="true"
+                            errorStyle="color: red" infoStyle="color: green"/>
+                <br/>
+
+
+                #{cartController.currentBook.book.title}
+                <br/>
+                <h:graphicImage    id="javarecipes" library="image"
+                                   style="width: 100px; height: 120px"
+                                   name="#{cartController.currentBook.book.image}"/>
+                <br/>
+                <h:outputLabel for="quantity" value="Quantity: "/>
+                <h:inputText id="quantity"
+                             value="#{cartController.currentBook.quantity}">
+
+                </h:inputText>
+                <br/>
+                <h:panelGrid columns="2">
+                    <h:commandButton id="updateCart" action="#{cartController.updateCart(cartController.currentBook.book.title)}"
+                                     value="Update"/>
+
+                    <h:commandButton id="viewCart" action="#{cartController.viewCart}" value="Back To Cart">
+                    </h:commandButton>
+                </h:panelGrid>
+                <br/>
+                <br/>
+
+
+            </h:form>
+        </ui:define>
+
+
+    </ui:composition>
+
+</h:body>
+</html>

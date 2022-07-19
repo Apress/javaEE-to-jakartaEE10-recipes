@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_2.xsd">
+    <!-- Define Persistence Unit -->
+    <persistence-unit name="JakartaEERecipes_PU">
+        <class>org.jakartaeerecipe.chapter15.recipe15_03.User</class>
+
+        <!-- Uncomment below for tilizing JDBC driver and data source -->
+        <properties>
+          <property name="jakarta.persistence.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+          <property name="jakarta.persistence.jdbc.user" value="acmeuser"/>
+          <property name="jakarta.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+          <property name="jakarta.persistence.jdbc.password" value="password"/>
+            <property name="toplink.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="toplink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="hibernate.connection.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="openjpa.ConnectionDriverName" value="org.apache.derby.jdbc.ClientDriver"/>
+            <property name="eclipselink.jdbc.url" value="jdbc:derby://localhost:1527/acme"/>
+            <property name="eclipselink.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+        </properties>
+        <!-- Uncomment below for utilizing application server container data source -->
+<!--        <jta-data-source>jdbc/acmedb</jta-data-source>-->
+<!--        <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+    </persistence-unit>
+</persistence>

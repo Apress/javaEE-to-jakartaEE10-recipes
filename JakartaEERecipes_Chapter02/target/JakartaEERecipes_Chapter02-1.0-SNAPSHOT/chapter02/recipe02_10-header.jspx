@@ -1,0 +1,12 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: home
+  Date: 03/01/22
+  Time: 6:12 PM
+  To change this template use File | Settings | File Templates.
+-->
+<html xmlns:jsp="http://java.sun.com/JSP/Page">
+<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+<header>This is the page header</header>
+</html>
+
