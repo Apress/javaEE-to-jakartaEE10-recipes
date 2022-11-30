@@ -36,7 +36,7 @@ public class MathServlet extends HttpServlet {
                 <body>
                     Solution: %s + %s = %s
                     <br/>
-                        <a href='recipe01_05.html'>Add Two More Numbers</a>
+                        <a href='recipe01_06.html'>Add Two More Numbers</a>
                 </body>
                 </html>""", numA, numB, solution);
         }
