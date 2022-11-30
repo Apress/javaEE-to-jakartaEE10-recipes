@@ -42,7 +42,8 @@ public class AttributeListener implements ServletContextListener, HttpSessionLis
         String id = session.getId();
         String name = event.getName();
         String value = (String) event.getValue();
-        String message = new StringBuffer("New attribute has been added to session: \n")
+        String message = new StringBuffer("New attribute has been added to session: ")
+                .append(id).append("\n")
                 .append("Attribute Name: ").append(name).append("\n")
                 .append("Attribute Value:").append(value).toString();
         log(message);
@@ -57,12 +58,29 @@ public class AttributeListener implements ServletContextListener, HttpSessionLis
     }
 
     @Override
-    public void attributeRemoved(HttpSessionBindingEvent sbe) {
+    public void attributeRemoved(HttpSessionBindingEvent event) {
         /* This method is called when an attribute is removed from a session. */
+        HttpSession session = event.getSession();
+		String id = session.getId();
+		String name = event.getName();
+		if (name == null) {
+			name = "Unknown";
+		}
+		String value = (String) event.getValue();
+		String message = new StringBuffer("Attribute has been removed from session: ").append(id).append("\n")
+				.append("Attribute Name: ").append(name).append("\n").append("Attribute Value: ").append(value)
+				.toString();
+		log(message);
     }
 
     @Override
-    public void attributeReplaced(HttpSessionBindingEvent sbe) {
+    public void attributeReplaced(HttpSessionBindingEvent event) {
         /* This method is called when an attribute is replaced in a session. */
+        String name = event.getName();
+		if (name == null) {
+			name = "Unknown";
+		}
+		String message = new StringBuffer("Attribute has been replaced: ").append(name).toString();
+		log(message);
     }
 }
