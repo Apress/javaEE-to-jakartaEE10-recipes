@@ -61,17 +61,17 @@ public class StartupShutdownListener implements ServletContextListener, HttpSess
             InternetAddress[] address = new InternetAddress[1];
             address[0] = new InternetAddress(to);
             msg.setRecipients(Message.RecipientType.TO, address);
-            msg.setSubject("Servlet container shutting down");
+            msg.setSubject("Servlet container status");
 
             // Append Footer
             msg.setContent(servlet_context_has_initialized, "text/plain");
             Transport transport = session.getTransport("smtp");
             transport.connect(smtpHost, smtpPort, smtpUsername, smtpPassword);
             Transport.send(msg, smtpUsername, smtpPassword);
+            System.out.println(TAG +  "email sent successfully...");
         } catch (MessagingException e) {
             System.out.println(TAG +  e);
         }
-        System.out.println(TAG +  "email sent successfully...");
     }
 
     @Override
